@@ -2,7 +2,7 @@ import pygame
 
 pygame.init() #init
 
-#create the screen
+#Create the screen
 
 screen = pygame.display.set_mode((800,600))
 
@@ -13,6 +13,15 @@ pygame.display.set_caption("DayLite")
 icon = pygame.image.load('zombie1.png')
 pygame.display.set_icon(icon)
 
+#Player
+playerImg = pygame.image.load('user.png')
+playerX= 30
+playerY = 50
+playerY
+def player(x,y): 
+    screen.blit(playerImg,(playerX,playerY))
+
+
 #Game Loop
 running = True
 while running:
@@ -20,5 +29,8 @@ while running:
         if event.type == pygame.QUIT:
             running= False
 
+    #RGB red green blue
     screen.fill((0,0,255))
-    pygame.display.update()
+
+    player(playerX,playerY)
+    pygame.display.update() #this is important for game to display! 
