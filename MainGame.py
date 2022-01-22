@@ -1,9 +1,20 @@
+import math
+import random
+
 import pygame
 
+from pygame import mixer
+
+#Background
+background = pygame.image.load("nature-8597.png")
 pygame.init() #init
 
-#Create the screen
 
+# Sound
+#mixer.music.load("")
+#mixer.music.play(-1)
+
+#Create the screen
 screen = pygame.display.set_mode((800,600))
 
 #Title and Icon
