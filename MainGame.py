@@ -2,10 +2,17 @@
 import math
 import random
 import time
+import sys
 from tkinter.font import names
 
 import pygame
 from pygame import mixer
+
+#Set Time Clock
+
+mainClock = pygame.time.Clock()
+
+
 
 # Intialize the pygame
 pygame.init()
@@ -15,7 +22,7 @@ screen = pygame.display.set_mode((800, 600))
 
 # Background
 background = pygame.image.load('backgroundss1.png')
-#background = pygame.Surface((640, 400))
+
 
 
 
@@ -41,8 +48,9 @@ class Player:
         return self.name
 
 playerImg = pygame.image.load('user.png')
+playerImg = pygame.transform.scale(playerImg, (100,100))
 playerX = 370
-playerY = 100
+playerY = 277
 playerX_change = 0
 
 
@@ -55,7 +63,9 @@ enemyY_change = []
 num_of_enemies = 3
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('zombie.png'))
+    enemy = pygame.image.load('zombie.png')
+    enemy = pygame.transform.scale(enemy, (100,100))
+    enemyImg.append(enemy)
     enemyX.append(random.randint(0, 736))
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(4)
